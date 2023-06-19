@@ -370,15 +370,6 @@ void DisplayHomeScreen(uint24_t pics){
             /* increases the name to start on and redraws the text */
             if(next){
                 startName++;
-                //make sure user can't scroll down too far
-                if (startName>(pics-1))//If there's more than 4 images, then handle things normally
-                startName=pics-1;
-                if (startName>pics-1 && pics-1>0) //makes sure user can't scroll too far when there's only 1 image detected
-                startName=pics;
-                if (startName>pics-2 && pics-2>0) //makes sure user can't scroll too far when there's only 2 images detected
-                startName=pics-1;
-                if (startName>pics-3 && pics-3>0) //makes sure user can't scroll too far when there's only 3 images detected
-                startName=pics-2;
                 PrintNames(startName, picNames, pics);
                 xOffset = 0;
                 yOffset = 0;
